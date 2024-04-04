@@ -1,29 +1,27 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <main class="container py-3">
-    <section class="card card-body">
-      <h1 class="display-1 text-center">Sistema de Gestión de Tareas</h1>
+  <div class="center-container">
+    <section class="content-container">
+      <h1 class="title">Sistema de Gestión de Tareas</h1>
 
-        <p>En el desarrollo de aplicaciones web, 
-        la gestión eficiente de tareas es una parte crucial para la organización y productividad...</p>
-
-
-        {% if user.is_authenticated %}
-        
-        <div class="alert alert-primary" role="alert">
-          Bienvenid@ de nuevo {{user.username|escape}}
-        </div>
-
-    {% else %}
-    <div>
-      <a class="btn btn-primary" href ="/signup/">Registrate</a>
-      <a class="btn btn-primary" href ="/iniciaeSesion">Inicia Sesión</a>
-     </div>
-
-    {% endif %}
-
-
+      {% if user.is_authenticated %}
+      <p class="description">
+        En el desarrollo de aplicaciones web, la gestión eficiente de tareas es
+        una parte crucial para la organización y productividad...
+      </p>
+      {% else %}
+      <p class="description">ACERCATE VIEJO</p>
+      <p class="description">ACERCATE!!!</p>
+      {% endif %} {% if user.is_authenticated %}
+      <div class="alert">Bienvenid@ de nuevo {{ user.username|escape }}</div>
+      {% else %}
+      <div class="button-container">
+        <a class="btn" href="/signup/">Registrate</a>
+        <a class="btn" href="/iniciaeSesion">Inicia Sesión</a>
+      </div>
+      {% endif %}
     </section>
+  </div>
 </main>
 {% endblock %}
+<link rel="stylesheet" href="{% static 'styles/styleh.css' %}">
