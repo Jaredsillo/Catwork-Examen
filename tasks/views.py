@@ -3,7 +3,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 
 #Librería de formulario
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
-from .form import TaskForm
+from .forms import TaskForm
 
 #Login
 from django.contrib.auth import login, logout, authenticate
