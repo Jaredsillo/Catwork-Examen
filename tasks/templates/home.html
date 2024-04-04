@@ -1,11 +1,29 @@
 {% extends 'base.html' %}
 
-<main class="container py-5">
-  <section class="card card-body">
-    <h1 class="display-1 text-center">HOLA, SOY UN VEGETA!!</h1>
-    <p>
-      Lo único que deseaba era ser más fuerte, por eso entrenaba duro.
-      Jamás me di por vencido.
-    </p>
-  </section>
+{% block content %}
+<main class="container py-3">
+    <section class="card card-body">
+      <h1 class="display-1 text-center">Sistema de Gestión de Tareas</h1>
+
+        <p>En el desarrollo de aplicaciones web, 
+        la gestión eficiente de tareas es una parte crucial para la organización y productividad...</p>
+
+
+        {% if user.is_authenticated %}
+        
+        <div class="alert alert-primary" role="alert">
+          Bienvenid@ de nuevo {{user.username|escape}}
+        </div>
+
+    {% else %}
+    <div>
+      <a class="btn btn-primary" href ="/signup/">Registrate</a>
+      <a class="btn btn-primary" href ="/iniciaeSesion">Inicia Sesión</a>
+     </div>
+
+    {% endif %}
+
+
+    </section>
 </main>
+{% endblock %}
