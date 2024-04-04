@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 
-#CSP
+# CSP
 from csp.middleware import CSPMiddleware
 from django.utils.html import format_html_join
 from django.utils.safestring import mark_safe
@@ -136,7 +136,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-if not DEBUG: 
+if not DEBUG:
     STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
@@ -148,9 +148,13 @@ LOGIN_URL = '/iniciaeSesion'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-CSP_DEFAULT_SRC = ("'self'",)  # Solo permite cargar recursos desde el mismo origen (tu propio sitio)
-CSP_SCRIPT_SRC = ("'self'",)   # Solo permite cargar scripts desde el mismo origen
-CSP_STYLE_SRC = ("'self'", "'unsafe-inline'", "https://stackpath.bootstrapcdn.com")  # Permitir también Bootstrap desde un CDN confiable
+# Solo permite cargar recursos desde el mismo origen (tu propio sitio)
+CSP_DEFAULT_SRC = ("'self'",)
+# Solo permite cargar scripts desde el mismo origen
+CSP_SCRIPT_SRC = ("'self'",)
+# Permitir también Bootstrap desde un CDN confiable
+CSP_STYLE_SRC = ("'self'", "'unsafe-inline'",
+                 "https://stackpath.bootstrapcdn.com")
 
 SECURE_BROWSER_XSS_FILTER = True
 SECURE_CONTENT_TYPE_NOSNIFF = True

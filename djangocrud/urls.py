@@ -1,4 +1,3 @@
-
 """
 URL configuration for djangocrud project.
 
@@ -22,18 +21,19 @@ from tasks import views
 urlpatterns = [
 
     path('adminLuN4/', admin.site.urls),
-    #path('',views.helloword ),
-    path('',views.home, name='home'),
-    path('signup/',views.signup, name='signup'),
-    path('task/',views.task, name='task'),
-    path('task_complete/',views.vista_tarea_Completa, name='vista_tarea_Completa'),
-    path('logout/',views.cerrarSesion, name='cerrarSesion'),
-    path('iniciaeSesion/',views.iniciaeSesion, name='iniciaeSesion'),
-    path('task/create/',views.create_task, name='create_task'),
-    
-    #Se agrega el filtro task_id para mostrar la tarea específica
-    path('task/<int:task_id>/',views.detalles, name='detalles'),
+    # path('',views.helloword ),
+    path('', views.home, name='home'),
+    path('signup/', views.signup, name='signup'),
+    path('task/', views.task, name='task'),
+    path('task_complete/', views.vista_tarea_Completa,
+         name='vista_tarea_Completa'),
+    path('logout/', views.cerrarSesion, name='cerrarSesion'),
+    path('iniciaeSesion/', views.iniciaeSesion, name='iniciaeSesion'),
+    path('task/create/', views.create_task, name='create_task'),
 
-    path('task/<int:task_id>/complete',views.tarea_completada, name='tarea_completada'),
-      path('task/<int:task_id>/delete',views.eliminar_tarea, name='eliminar_tarea'),
+    # Se agrega el filtro task_id para mostrar la tarea específica
+    path('task/<int:task_id>/', views.detalles, name='detalles'),
+
+    path('task/<int:task_id>/complete', views.tarea_completada, name='tarea_completada'),
+    path('task/<int:task_id>/delete', views.eliminar_tarea, name='eliminar_tarea'),
 ]
