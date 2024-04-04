@@ -4,13 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django Crud </title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        /* Estilos para la barra de navegación */
+        .navbar {
+            background-color: #343a40; /* Color de fondo */
+            color: #ffffff; /* Color del texto */
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+        }
+
+        .navbar-nav .nav-link {
+            color: #ffffff; /* Color del texto de los enlaces */
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #ffffff; /* Cambia el color del texto al pasar el ratón */
+        }
+
+        /* Estilos para el contenido */
+        .container {
+            margin-top: 20px;
+        }
+
+        /* Estilos para los enlaces */
+        a {
+            color: #007bff; /* Color del enlace */
+            text-decoration: none; /* Quita la subrayado por defecto */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Subraya el enlace al pasar el ratón */
+        }
+    </style>
 </head>
 <body>
-
-
-
-
 <nav class="navbar navbar-expand-lg navbar-light bg-dark navbar-dark">
     <div class="container">
           <a class="navbar-brand" href="#">{{user.username}}</a>
@@ -64,5 +93,4 @@
     {% endblock %}
 
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </html>
